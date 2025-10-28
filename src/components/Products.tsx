@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FileText, Users, Package, ArrowRight, Zap, Shield, TrendingUp } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
@@ -46,6 +47,11 @@ const products: Product[] = [
 
 export default function Products() {
   const [hoveredProduct, setHoveredProduct] = useState<string | null>(null);
+  const navigate = useNavigate();
+
+  const handleLearnMore = (productId: string) => {
+    navigate(`/${productId}`);
+  };
 
   return (
     <section id="products" className="relative py-12 sm:py-20 md:py-32 bg-gray-950 overflow-hidden">
@@ -103,6 +109,7 @@ export default function Products() {
                   ))}
                 </div>
                 <Button
+                  onClick={() => handleLearnMore(product.id)}
                   className={`w-full bg-gradient-to-r ${product.gradient} hover:opacity-90 text-white group/btn text-sm sm:text-base`}
                 >
                   Learn More

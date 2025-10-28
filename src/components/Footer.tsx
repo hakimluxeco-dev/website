@@ -1,5 +1,6 @@
 import Logo from "./Logo";
 import { Linkedin, Twitter, Github, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -33,12 +34,6 @@ export default function Footer() {
               >
                 <Github className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 hover:text-white" />
               </a>
-              <a
-                href="#"
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-800 hover:bg-blue-600 flex items-center justify-center transition-colors"
-              >
-                <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 hover:text-white" />
-              </a>
             </div>
           </div>
 
@@ -47,19 +42,19 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Products</h3>
             <ul className="space-y-1.5 sm:space-y-2">
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 text-xs sm:text-sm transition-colors">
+                <Link to="/invoice-manager" className="text-gray-400 hover:text-blue-400 text-xs sm:text-sm transition-colors">
                   Invoice Manager
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 text-xs sm:text-sm transition-colors">
+                <Link to="/lead-machine" className="text-gray-400 hover:text-blue-400 text-xs sm:text-sm transition-colors">
                   Lead Machine
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 text-xs sm:text-sm transition-colors">
+                <Link to="/stock-manager" className="text-gray-400 hover:text-blue-400 text-xs sm:text-sm transition-colors">
                   Stock Manager
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -69,9 +64,9 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Company</h3>
             <ul className="space-y-1.5 sm:space-y-2">
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 text-xs sm:text-sm transition-colors">
+                <Link to="/about" className="text-gray-400 hover:text-blue-400 text-xs sm:text-sm transition-colors">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-blue-400 text-xs sm:text-sm transition-colors">
@@ -79,14 +74,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 text-xs sm:text-sm transition-colors">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 text-xs sm:text-sm transition-colors">
+                <Link to="/privacy-policy" className="text-gray-400 hover:text-blue-400 text-xs sm:text-sm transition-colors">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -101,9 +91,9 @@ export default function Footer() {
             <a href="#" className="text-gray-500 hover:text-blue-400 text-xs sm:text-sm transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="text-gray-500 hover:text-blue-400 text-xs sm:text-sm transition-colors">
+            <Link to="/privacy-policy" className="text-gray-500 hover:text-blue-400 text-xs sm:text-sm transition-colors">
               Privacy Policy
-            </a>
+            </Link>
           </div>
         </div>
       </div>

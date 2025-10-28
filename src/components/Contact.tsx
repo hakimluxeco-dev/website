@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, MessageCircle, Send } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
+import { useToast } from "./ui/use-toast";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,11 +14,59 @@ export default function Contact() {
     company: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+
+    try {
+      // Using Web3Forms - free email service
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '5a02c114-65b3-41ad-b0de-a18048ad3dec',
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message,
+          subject: `New contact from ${formData.name} - MAI Business Solutions`,
+          from_name: 'MAI Business Solutions',
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: "Message sent successfully!",
+          description: "We'll get back to you within 24 hours.",
+        });
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          message: "",
+        });
+      } else {
+        throw new Error(data.message || 'Failed to send');
+      }
+    } catch (error) {
+      console.error('Email error:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or email us directly at info@maisolutions.qzz.io",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -73,6 +122,7 @@ export default function Contact() {
                     placeholder="John Doe"
                     className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-500 focus:border-blue-500 text-sm sm:text-base"
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div>
@@ -88,6 +138,7 @@ export default function Contact() {
                     placeholder="john@company.com"
                     className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-500 focus:border-blue-500 text-sm sm:text-base"
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div>
@@ -101,6 +152,7 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Your Company"
                     className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-500 focus:border-blue-500 text-sm sm:text-base"
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div>
@@ -116,13 +168,15 @@ export default function Contact() {
                     rows={5}
                     className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-500 focus:border-blue-500 resize-none text-sm sm:text-base"
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white shadow-lg shadow-blue-500/30 group text-sm sm:text-base py-5 sm:py-6"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white shadow-lg shadow-blue-500/30 group text-sm sm:text-base py-5 sm:py-6 disabled:opacity-50"
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                   <Send className="ml-2 w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </form>
@@ -177,31 +231,19 @@ export default function Contact() {
                   </div>
                   <div className="min-w-0">
                     <p className="text-xs sm:text-sm text-gray-400">Email us at</p>
-                    <p className="text-sm sm:text-base text-white font-medium truncate">contact@maibusiness.ai</p>
+                    <p className="text-sm sm:text-base text-white font-medium truncate">info@maisolutions.qzz.io</p>
                   </div>
                 </CardContent>
               </Card>
 
               <Card className="bg-gray-900/50 border-gray-800 backdrop-blur-sm hover:border-blue-500/50 transition-colors">
                 <CardContent className="flex items-center gap-3 sm:gap-4 p-4 sm:p-6">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-cyan-500/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                    <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-400" />
                   </div>
                   <div>
-                    <p className="text-xs sm:text-sm text-gray-400">Call us at</p>
-                    <p className="text-sm sm:text-base text-white font-medium">+1 (555) 123-4567</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-gray-900/50 border-gray-800 backdrop-blur-sm hover:border-blue-500/50 transition-colors">
-                <CardContent className="flex items-center gap-3 sm:gap-4 p-4 sm:p-6">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-indigo-500/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-xs sm:text-sm text-gray-400">Visit us at</p>
-                    <p className="text-sm sm:text-base text-white font-medium">123 AI Street, Tech City, TC 12345</p>
+                    <p className="text-xs sm:text-sm text-gray-400">WhatsApp us</p>
+                    <p className="text-sm sm:text-base text-white font-medium">+27 72 845 6172</p>
                   </div>
                 </CardContent>
               </Card>

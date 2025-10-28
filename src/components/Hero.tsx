@@ -1,17 +1,14 @@
 import { ArrowRight, Sparkles } from "lucide-react";
+import { useState } from "react";
 import { Button } from "./ui/button";
 import Logo from "./Logo";
+import DemoModal from "./DemoModal";
 
 export default function Hero() {
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+
   const scrollToProducts = () => {
     const element = document.getElementById("products");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -22,6 +19,11 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-900 via-gray-900 to-gray-950 pt-16"
     >
+      <DemoModal 
+        isOpen={isDemoModalOpen} 
+        onClose={() => setIsDemoModalOpen(false)}
+      />
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -62,11 +64,11 @@ export default function Hero() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
             <Button
-              onClick={scrollToContact}
+              onClick={() => setIsDemoModalOpen(true)}
               size="lg"
               className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white shadow-lg shadow-blue-500/30 text-sm sm:text-base px-6 sm:px-8 py-5 sm:py-6 group"
             >
-              Request Consultation
+              Schedule a Demo
               <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import { Button } from "./ui/button";
 
@@ -49,6 +50,12 @@ export default function Navbar() {
             >
               Products
             </button>
+            <Link
+              to="/about"
+              className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm font-medium"
+            >
+              About Us
+            </Link>
             <Button
               onClick={() => scrollToSection("contact")}
               className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white shadow-lg shadow-blue-500/30"
@@ -82,6 +89,13 @@ export default function Navbar() {
               >
                 Products
               </button>
+              <Link
+                to="/about"
+                className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-left py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About Us
+              </Link>
               <Button
                 onClick={() => scrollToSection("contact")}
                 className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white w-full"
