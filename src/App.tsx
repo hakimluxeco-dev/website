@@ -8,6 +8,7 @@ import StockManager from "./components/StockManager";
 import Receptionist from "./components/Receptionist";
 import About from "./components/About";
 import PrivacyPolicy from "./components/PrivacyPolicy";
+import NotFound from "./components/NotFound";
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -35,6 +36,7 @@ function App() {
           <Route path="/receptionist" element={<Receptionist />} />
           <Route path="/about" element={<About />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </>
     </Suspense>

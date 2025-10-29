@@ -78,7 +78,7 @@ export default function TrialModal({ isOpen, onClose, productName = "MAI Busines
           </div>
           <CardTitle className="text-2xl text-white">Start Your Free Trial</CardTitle>
           <CardDescription className="text-gray-400">
-            A copy of the demo will be sent to your inbox
+            A copy of {productName} demo will be sent to your inbox
           </CardDescription>
         </CardHeader>
 

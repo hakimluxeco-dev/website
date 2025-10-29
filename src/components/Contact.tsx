@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Mail, MessageCircle, Send } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
@@ -23,19 +29,19 @@ export default function Contact() {
 
     try {
       // Using Web3Forms - free email service
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          access_key: '5a02c114-65b3-41ad-b0de-a18048ad3dec',
+          access_key: "5a02c114-65b3-41ad-b0de-a18048ad3dec",
           name: formData.name,
           email: formData.email,
           company: formData.company,
           message: formData.message,
           subject: `New contact from ${formData.name} - MAI Business Solutions`,
-          from_name: 'MAI Business Solutions',
+          from_name: "MAI Business Solutions",
         }),
       });
 
@@ -55,13 +61,14 @@ export default function Contact() {
           message: "",
         });
       } else {
-        throw new Error(data.message || 'Failed to send');
+        throw new Error(data.message || "Failed to send");
       }
     } catch (error) {
-      console.error('Email error:', error);
+      console.error("Email error:", error);
       toast({
         title: "Failed to send message",
-        description: "Please try again or email us directly at info@maisolutions.qzz.io",
+        description:
+          "Please try again or email us directly at info@maisolutions.qzz.io",
         variant: "destructive",
       });
     } finally {
@@ -69,7 +76,9 @@ export default function Contact() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -77,7 +86,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-12 sm:py-20 md:py-32 bg-gradient-to-b from-gray-950 to-gray-900 overflow-hidden">
+    <section
+      id="contact"
+      className="relative py-12 sm:py-20 md:py-32 bg-gradient-to-b from-gray-950 to-gray-900 overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-full blur-3xl"></div>
@@ -95,7 +107,8 @@ export default function Contact() {
             </span>
           </h2>
           <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto px-4">
-            Ready to transform your business? Get in touch with our team for a personalized consultation
+            Ready to transform your business? Get in touch with our team for a
+            personalized consultation
           </p>
         </div>
 
@@ -103,15 +116,21 @@ export default function Contact() {
           {/* Contact Form */}
           <Card className="bg-gray-900/50 border-gray-800 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-xl sm:text-2xl text-white">Send us a message</CardTitle>
+              <CardTitle className="text-xl sm:text-2xl text-white">
+                Send us a message
+              </CardTitle>
               <CardDescription className="text-sm sm:text-base text-gray-400">
-                Fill out the form below and we'll get back to you within 24 hours
+                Fill out the form below and we'll get back to you within 24
+                hours
               </CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-xs sm:text-sm font-medium text-gray-300 mb-2"
+                  >
                     Full Name
                   </label>
                   <Input
@@ -126,7 +145,10 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-xs sm:text-sm font-medium text-gray-300 mb-2"
+                  >
                     Email Address
                   </label>
                   <Input
@@ -142,7 +164,10 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="company" className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
+                  <label
+                    htmlFor="company"
+                    className="block text-xs sm:text-sm font-medium text-gray-300 mb-2"
+                  >
                     Company Name
                   </label>
                   <Input
@@ -156,7 +181,10 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-xs sm:text-sm font-medium text-gray-300 mb-2"
+                  >
                     Message
                   </label>
                   <Textarea
@@ -187,7 +215,9 @@ export default function Contact() {
           <div className="space-y-6 sm:space-y-8">
             <Card className="bg-gradient-to-br from-blue-600 to-cyan-500 border-0 text-white">
               <CardHeader>
-                <CardTitle className="text-xl sm:text-2xl">Why Choose MAI?</CardTitle>
+                <CardTitle className="text-xl sm:text-2xl">
+                  Why Choose MAI?
+                </CardTitle>
                 <CardDescription className="text-blue-100 text-sm sm:text-base">
                   We're committed to delivering exceptional AI solutions
                 </CardDescription>
@@ -198,8 +228,12 @@ export default function Contact() {
                     <span className="text-base sm:text-lg">✓</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1 text-sm sm:text-base">Expert Team</h4>
-                    <p className="text-xs sm:text-sm text-blue-100">Industry-leading AI specialists with 10+ years experience</p>
+                    <h4 className="font-semibold mb-1 text-sm sm:text-base">
+                      Expert Team
+                    </h4>
+                    <p className="text-xs sm:text-sm text-blue-100">
+                      Industry-leading AI specialists with 10+ years experience
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2.5 sm:gap-3">
@@ -207,8 +241,12 @@ export default function Contact() {
                     <span className="text-base sm:text-lg">✓</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1 text-sm sm:text-base">Proven Track Record</h4>
-                    <p className="text-xs sm:text-sm text-blue-100">500+ successful implementations across industries</p>
+                    <h4 className="font-semibold mb-1 text-sm sm:text-base">
+                      Proven Track Record
+                    </h4>
+                    <p className="text-xs sm:text-sm text-blue-100">
+                      500+ successful implementations across industries
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2.5 sm:gap-3">
@@ -216,8 +254,12 @@ export default function Contact() {
                     <span className="text-base sm:text-lg">✓</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1 text-sm sm:text-base">Ongoing Support</h4>
-                    <p className="text-xs sm:text-sm text-blue-100">24/7 dedicated support and continuous optimization</p>
+                    <h4 className="font-semibold mb-1 text-sm sm:text-base">
+                      Ongoing Support
+                    </h4>
+                    <p className="text-xs sm:text-sm text-blue-100">
+                      24/7 dedicated support and continuous optimization
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -230,8 +272,12 @@ export default function Contact() {
                     <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-xs sm:text-sm text-gray-400">Email us at</p>
-                    <p className="text-sm sm:text-base text-white font-medium truncate">info@maisolutions.qzz.io</p>
+                    <p className="text-xs sm:text-sm text-gray-400">
+                      Email us at
+                    </p>
+                    <p className="text-sm sm:text-base text-white font-medium truncate">
+                      info@maisolutions.co.za
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -242,8 +288,12 @@ export default function Contact() {
                     <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-400" />
                   </div>
                   <div>
-                    <p className="text-xs sm:text-sm text-gray-400">WhatsApp us</p>
-                    <p className="text-sm sm:text-base text-white font-medium">+27 72 845 6172</p>
+                    <p className="text-xs sm:text-sm text-gray-400">
+                      WhatsApp us
+                    </p>
+                    <p className="text-sm sm:text-base text-white font-medium">
+                      +27 72 845 6172
+                    </p>
                   </div>
                 </CardContent>
               </Card>
