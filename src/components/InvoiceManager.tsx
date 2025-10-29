@@ -1,6 +1,7 @@
 import { ArrowLeft, Camera, Zap, Clock, Globe, BarChart3, CheckCircle, FileText, Upload, Brain, Database, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -67,6 +68,27 @@ export default function InvoiceManager() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+      <Helmet>
+        <title>Invoice Manager - AI-Powered Invoice Processing | MAI Business Solutions</title>
+        <meta name="description" content="Transform invoice processing with AI-powered image capture and intelligent data extraction. Simply snap a photo of any invoice and our AI instantly extracts all information with 99.9% accuracy. Reduce processing time by 90%." />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.maisolutions.co.za/invoice-manager" />
+        <meta property="og:title" content="Invoice Manager - AI-Powered Invoice Processing" />
+        <meta property="og:description" content="Transform invoice processing with AI-powered image capture and intelligent data extraction. Simply snap a photo of any invoice and our AI instantly extracts all information with 99.9% accuracy. Reduce processing time by 90%." />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://www.maisolutions.co.za/invoice-manager" />
+        <meta property="twitter:title" content="Invoice Manager - AI-Powered Invoice Processing" />
+        <meta property="twitter:description" content="Transform invoice processing with AI-powered image capture and intelligent data extraction. Simply snap a photo of any invoice and our AI instantly extracts all information with 99.9% accuracy." />
+        <meta property="twitter:image" content="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80" />
+      </Helmet>
+
       <TrialModal 
         isOpen={isTrialModalOpen} 
         onClose={() => setIsTrialModalOpen(false)}

@@ -1,6 +1,7 @@
 import { ArrowLeft, Phone, Clock, Calendar, MessageSquare, CheckCircle, Zap, Globe, BarChart3, Brain, Shield, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -67,6 +68,27 @@ export default function Receptionist() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+      <Helmet>
+        <title>AI Receptionist - 24/7 Phone Answering Service | MAI Business Solutions</title>
+        <meta name="description" content="A 24/7 AI Voice Agent that answers every call, takes messages, and books appointments - ensuring you never miss an opportunity. Professional phone answering with natural conversations, multi-language support, and CRM integration. Capture 100% of incoming leads." />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.maisolutions.co.za/receptionist" />
+        <meta property="og:title" content="AI Receptionist - 24/7 Phone Answering Service" />
+        <meta property="og:description" content="A 24/7 AI Voice Agent that answers every call, takes messages, and books appointments. Never miss an opportunity with professional phone answering, natural conversations, and multi-language support. Capture 100% of incoming leads." />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200&q=80" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://www.maisolutions.co.za/receptionist" />
+        <meta property="twitter:title" content="AI Receptionist - 24/7 Phone Answering Service" />
+        <meta property="twitter:description" content="A 24/7 AI Voice Agent that answers every call, takes messages, and books appointments. Never miss an opportunity with professional phone answering and multi-language support." />
+        <meta property="twitter:image" content="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200&q=80" />
+      </Helmet>
+
       <TrialModal 
         isOpen={isTrialModalOpen} 
         onClose={() => setIsTrialModalOpen(false)}

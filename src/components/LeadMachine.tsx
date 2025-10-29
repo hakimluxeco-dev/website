@@ -1,6 +1,7 @@
 import { ArrowLeft, Target, Brain, Zap, TrendingUp, Users, Mail, BarChart3, CheckCircle, Sparkles, Globe, MessageSquare, Filter, Workflow } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -89,6 +90,27 @@ export default function LeadMachine() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+      <Helmet>
+        <title>Lead Machine - AI-Powered Lead Generation | MAI Business Solutions</title>
+        <meta name="description" content="The most advanced AI-powered lead generation and sales acceleration platform. Increase qualified leads by 300%, reduce acquisition costs by 50%, and improve conversion rates by 45%. AI-powered lead scoring, intelligent prospecting, and multi-channel outreach." />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.maisolutions.co.za/lead-machine" />
+        <meta property="og:title" content="Lead Machine - AI-Powered Lead Generation & Sales Acceleration" />
+        <meta property="og:description" content="The most advanced AI-powered lead generation platform. Increase qualified leads by 300%, reduce acquisition costs by 50%, and improve conversion rates by 45%. AI-powered lead scoring, intelligent prospecting, and multi-channel outreach." />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://www.maisolutions.co.za/lead-machine" />
+        <meta property="twitter:title" content="Lead Machine - AI-Powered Lead Generation" />
+        <meta property="twitter:description" content="Increase qualified leads by 300%, reduce acquisition costs by 50%, and improve conversion rates by 45%. AI-powered lead scoring, intelligent prospecting, and multi-channel outreach." />
+        <meta property="twitter:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80" />
+      </Helmet>
+
       <TrialModal 
         isOpen={isTrialModalOpen} 
         onClose={() => setIsTrialModalOpen(false)}
