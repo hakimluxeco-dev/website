@@ -56,6 +56,11 @@ export default function Footer() {
                   Stock Manager
                 </Link>
               </li>
+              <li>
+                <Link to="/receptionist" className="text-gray-400 hover:text-blue-400 text-xs sm:text-sm transition-colors">
+                  AI Receptionist
+                </Link>
+              </li>
             </ul>
           </div>
 

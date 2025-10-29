@@ -5,6 +5,7 @@ import SplashScreen from "./components/SplashScreen";
 import InvoiceManager from "./components/InvoiceManager";
 import LeadMachine from "./components/LeadMachine";
 import StockManager from "./components/StockManager";
+import Receptionist from "./components/Receptionist";
 import About from "./components/About";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/invoice-manager" element={<InvoiceManager />} />
           <Route path="/lead-machine" element={<LeadMachine />} />
           <Route path="/stock-manager" element={<StockManager />} />
+          <Route path="/receptionist" element={<Receptionist />} />
           <Route path="/about" element={<About />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FileText, Users, Package, ArrowRight, Zap, Shield, TrendingUp } from "lucide-react";
+import { FileText, Users, Package, Phone, ArrowRight, Zap, Shield, TrendingUp } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
@@ -42,6 +42,15 @@ const products: Product[] = [
     features: ["Predictive Inventory", "Auto-Reordering", "Multi-Warehouse Support", "Demand Forecasting"],
     color: "indigo",
     gradient: "from-indigo-600 to-cyan-500",
+  },
+  {
+    id: "receptionist",
+    title: "AI Receptionist",
+    description: "24/7 AI voice agent that answers calls, takes messages, and books appointments automatically.",
+    icon: <Phone className="w-8 h-8" />,
+    features: ["24/7 Call Answering", "Appointment Booking", "Message Taking", "Multi-Language Support"],
+    color: "blue",
+    gradient: "from-blue-600 to-cyan-500",
   },
 ];
 
