@@ -75,18 +75,20 @@ export default function InvoiceManager() {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.maisolutions.co.za/invoice-manager" />
+        <meta property="og:site_name" content="MAI Business Solutions" />
         <meta property="og:title" content="Invoice Manager - AI-Powered Invoice Processing" />
         <meta property="og:description" content="Transform invoice processing with AI-powered image capture and intelligent data extraction. Simply snap a photo of any invoice and our AI instantly extracts all information with 99.9% accuracy. Reduce processing time by 90%." />
-        <meta property="og:image" content="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80" />
+        <meta property="og:image" content="https://www.maisolutions.co.za/logo.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="MAI Business Solutions Logo" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.maisolutions.co.za/invoice-manager" />
         <meta property="twitter:title" content="Invoice Manager - AI-Powered Invoice Processing" />
         <meta property="twitter:description" content="Transform invoice processing with AI-powered image capture and intelligent data extraction. Simply snap a photo of any invoice and our AI instantly extracts all information with 99.9% accuracy." />
-        <meta property="twitter:image" content="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80" />
+        <meta property="twitter:image" content="https://www.maisolutions.co.za/logo.svg" />
       </Helmet>
 
       <TrialModal 

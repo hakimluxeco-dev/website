@@ -97,18 +97,20 @@ export default function StockManager() {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.maisolutions.co.za/stock-manager" />
+        <meta property="og:site_name" content="MAI Business Solutions" />
         <meta property="og:title" content="Stock Manager - AI-Powered Inventory Optimization" />
         <meta property="og:description" content="AI-powered inventory optimization with predictive analytics and automated replenishment. Reduce inventory costs by 30-40%, improve accuracy to 99%+, and eliminate stockouts. Machine learning predicts demand with 95% accuracy." />
-        <meta property="og:image" content="https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=80" />
+        <meta property="og:image" content="https://www.maisolutions.co.za/logo.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="MAI Business Solutions Logo" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.maisolutions.co.za/stock-manager" />
         <meta property="twitter:title" content="Stock Manager - AI-Powered Inventory Optimization" />
         <meta property="twitter:description" content="Reduce inventory costs by 30-40%, improve accuracy to 99%+, and eliminate stockouts. Machine learning predicts demand with 95% accuracy using AI-powered analytics." />
-        <meta property="twitter:image" content="https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=80" />
+        <meta property="twitter:image" content="https://www.maisolutions.co.za/logo.svg" />
       </Helmet>
 
       <TrialModal 

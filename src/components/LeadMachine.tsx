@@ -97,18 +97,20 @@ export default function LeadMachine() {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.maisolutions.co.za/lead-machine" />
+        <meta property="og:site_name" content="MAI Business Solutions" />
         <meta property="og:title" content="Lead Machine - AI-Powered Lead Generation & Sales Acceleration" />
         <meta property="og:description" content="The most advanced AI-powered lead generation platform. Increase qualified leads by 300%, reduce acquisition costs by 50%, and improve conversion rates by 45%. AI-powered lead scoring, intelligent prospecting, and multi-channel outreach." />
-        <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80" />
+        <meta property="og:image" content="https://www.maisolutions.co.za/logo.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="MAI Business Solutions Logo" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.maisolutions.co.za/lead-machine" />
         <meta property="twitter:title" content="Lead Machine - AI-Powered Lead Generation" />
         <meta property="twitter:description" content="Increase qualified leads by 300%, reduce acquisition costs by 50%, and improve conversion rates by 45%. AI-powered lead scoring, intelligent prospecting, and multi-channel outreach." />
-        <meta property="twitter:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80" />
+        <meta property="twitter:image" content="https://www.maisolutions.co.za/logo.svg" />
       </Helmet>
 
       <TrialModal 

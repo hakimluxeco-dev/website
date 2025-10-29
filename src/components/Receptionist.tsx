@@ -75,18 +75,20 @@ export default function Receptionist() {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.maisolutions.co.za/receptionist" />
+        <meta property="og:site_name" content="MAI Business Solutions" />
         <meta property="og:title" content="AI Receptionist - 24/7 Phone Answering Service" />
         <meta property="og:description" content="A 24/7 AI Voice Agent that answers every call, takes messages, and books appointments. Never miss an opportunity with professional phone answering, natural conversations, and multi-language support. Capture 100% of incoming leads." />
-        <meta property="og:image" content="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200&q=80" />
+        <meta property="og:image" content="https://www.maisolutions.co.za/logo.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="MAI Business Solutions Logo" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.maisolutions.co.za/receptionist" />
         <meta property="twitter:title" content="AI Receptionist - 24/7 Phone Answering Service" />
         <meta property="twitter:description" content="A 24/7 AI Voice Agent that answers every call, takes messages, and books appointments. Never miss an opportunity with professional phone answering and multi-language support." />
-        <meta property="twitter:image" content="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200&q=80" />
+        <meta property="twitter:image" content="https://www.maisolutions.co.za/logo.svg" />
       </Helmet>
 
       <TrialModal 
