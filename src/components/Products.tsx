@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FileText, Users, Package, Phone, ArrowRight, Zap, Shield, TrendingUp } from "lucide-react";
+import { FileText, Users, Package, Phone, MessageCircle, ArrowRight, Zap, Shield, TrendingUp } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
@@ -16,6 +16,15 @@ interface Product {
 }
 
 const products: Product[] = [
+  {
+    id: "whatsapp-assistant",
+    title: "WhatsApp Assistant",
+    description: "24/7 AI-powered sales agent that engages leads instantly, qualifies prospects, and automates your WhatsApp conversations.",
+    icon: <MessageCircle className="w-8 h-8" />,
+    features: ["24/7 AI Sales Agent", "Personalized Broadcasts", "Smart Segmentation", "Rich Media Messaging", "Voice Enabled"],
+    color: "blue",
+    gradient: "from-blue-600 to-cyan-500",
+  },
   {
     id: "invoice-manager",
     title: "Invoice Manager",

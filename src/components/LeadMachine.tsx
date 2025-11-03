@@ -1,4 +1,4 @@
-import { ArrowLeft, Target, Brain, Zap, TrendingUp, Users, Mail, BarChart3, CheckCircle, Sparkles, Globe, MessageSquare, Filter, Workflow } from "lucide-react";
+import { ArrowLeft, Target, Brain, Zap, TrendingUp, Users, Mail, BarChart3, CheckCircle, Sparkles, Globe, MessageSquare, Filter, Workflow, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
@@ -9,6 +9,7 @@ import TrialModal from "./TrialModal";
 
 export default function LeadMachine() {
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -119,6 +120,26 @@ export default function LeadMachine() {
         productName="Lead Machine"
       />
 
+      {/* Image Zoom Modal */}
+      {zoomedImage && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 cursor-zoom-out"
+          onClick={() => setZoomedImage(null)}
+        >
+          <button
+            onClick={() => setZoomedImage(null)}
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+          >
+            <X className="w-8 h-8" />
+          </button>
+          <img 
+            src={zoomedImage} 
+            alt="Zoomed dashboard view"
+            className="max-w-full max-h-full object-contain"
+          />
+        </div>
+      )}
+
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0">
@@ -186,6 +207,87 @@ export default function LeadMachine() {
                   45%
                 </div>
                 <p className="text-gray-300">Higher Conversion Rate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Dashboard Demo Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-cyan-500/10 text-cyan-300 border-cyan-500/20">
+              Live Dashboard
+            </Badge>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Powerful Lead Management at Your Fingertips
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Manage, track, and convert leads with our intuitive AI-powered dashboard
+            </p>
+          </div>
+
+          <div className="max-w-7xl mx-auto space-y-8">
+            {/* Main Dashboard View */}
+            <div 
+              className="rounded-2xl overflow-hidden border border-gray-800 shadow-2xl shadow-cyan-500/10 bg-gray-900/50 cursor-pointer transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98]"
+              onClick={() => setZoomedImage("https://storage.googleapis.com/tempo-image-previews/user_34NSCeaX7cUfcqgytX4YHlnjfLI-1761827391571-Screenshot%202025-10-30%20142612.png")}
+            >
+              <img 
+                src="https://storage.googleapis.com/tempo-image-previews/user_34NSCeaX7cUfcqgytX4YHlnjfLI-1761827391571-Screenshot%202025-10-30%20142612.png" 
+                alt="Lead Machine Dashboard showing leads overview with company information, contact details, and status tracking"
+                className="w-full h-auto"
+              />
+            </div>
+
+            {/* Feature Highlights Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Lead Details */}
+              <div 
+                className="rounded-xl overflow-hidden border border-gray-800 shadow-lg shadow-cyan-500/5 bg-gray-900/50 cursor-pointer transition-transform duration-300 hover:scale-105 active:scale-95"
+                onClick={() => setZoomedImage("https://storage.googleapis.com/tempo-image-previews/user_34NSCeaX7cUfcqgytX4YHlnjfLI-1761827397032-Screenshot%202025-10-30%20142724.png")}
+              >
+                <img 
+                  src="https://storage.googleapis.com/tempo-image-previews/user_34NSCeaX7cUfcqgytX4YHlnjfLI-1761827397032-Screenshot%202025-10-30%20142724.png" 
+                  alt="Detailed lead information panel showing company data, contact information, and engagement status"
+                  className="w-full h-auto"
+                />
+              </div>
+
+              {/* Lead Generation Parameters */}
+              <div 
+                className="rounded-xl overflow-hidden border border-gray-800 shadow-lg shadow-cyan-500/5 bg-gray-900/50 cursor-pointer transition-transform duration-300 hover:scale-105 active:scale-95"
+                onClick={() => setZoomedImage("https://storage.googleapis.com/tempo-image-previews/user_34NSCeaX7cUfcqgytX4YHlnjfLI-1761827402524-Screenshot%202025-10-30%20142815.png")}
+              >
+                <img 
+                  src="https://storage.googleapis.com/tempo-image-previews/user_34NSCeaX7cUfcqgytX4YHlnjfLI-1761827402524-Screenshot%202025-10-30%20142815.png" 
+                  alt="Lead generation parameters form with business type, location, and leads limit settings"
+                  className="w-full h-auto"
+                />
+              </div>
+
+              {/* Email Customization */}
+              <div 
+                className="rounded-xl overflow-hidden border border-gray-800 shadow-lg shadow-cyan-500/5 bg-gray-900/50 cursor-pointer transition-transform duration-300 hover:scale-105 active:scale-95"
+                onClick={() => setZoomedImage("https://storage.googleapis.com/tempo-image-previews/user_34NSCeaX7cUfcqgytX4YHlnjfLI-1761827409744-Screenshot%202025-10-30%20142842.png")}
+              >
+                <img 
+                  src="https://storage.googleapis.com/tempo-image-previews/user_34NSCeaX7cUfcqgytX4YHlnjfLI-1761827409744-Screenshot%202025-10-30%20142842.png" 
+                  alt="Email customization interface with subject line and message personalization options"
+                  className="w-full h-auto"
+                />
+              </div>
+
+              {/* Additional Feature - Duplicate for symmetry */}
+              <div className="rounded-xl overflow-hidden border border-gray-800 shadow-lg shadow-cyan-500/5 bg-gray-900/50 flex items-center justify-center p-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-600 to-blue-500 p-4 mx-auto mb-4">
+                    <Sparkles className="w-full h-full text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">AI-Powered</h3>
+                  <p className="text-sm text-gray-400">Smart automation for maximum efficiency</p>
+                </div>
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@ import { Suspense, useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/home";
 import SplashScreen from "./components/SplashScreen";
+import WhatsappAssistant from "./components/WhatsappAssistant";
 import InvoiceManager from "./components/InvoiceManager";
 import LeadMachine from "./components/LeadMachine";
 import StockManager from "./components/StockManager";
@@ -30,6 +31,7 @@ function App() {
       <>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/whatsapp-assistant" element={<WhatsappAssistant />} />
           <Route path="/invoice-manager" element={<InvoiceManager />} />
           <Route path="/lead-machine" element={<LeadMachine />} />
           <Route path="/stock-manager" element={<StockManager />} />

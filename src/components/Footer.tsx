@@ -42,6 +42,11 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Products</h3>
             <ul className="space-y-1.5 sm:space-y-2">
               <li>
+                <Link to="/whatsapp-assistant" className="text-gray-400 hover:text-blue-400 text-xs sm:text-sm transition-colors">
+                  WhatsApp Assistant
+                </Link>
+              </li>
+              <li>
                 <Link to="/invoice-manager" className="text-gray-400 hover:text-blue-400 text-xs sm:text-sm transition-colors">
                   Invoice Manager
                 </Link>

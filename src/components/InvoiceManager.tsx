@@ -1,4 +1,4 @@
-import { ArrowLeft, Camera, Zap, Clock, Globe, BarChart3, CheckCircle, FileText, Upload, Brain, Database, Shield } from "lucide-react";
+import { ArrowLeft, Camera, Zap, Clock, Globe, BarChart3, CheckCircle, FileText, Upload, Brain, Database, Shield, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
@@ -9,6 +9,7 @@ import TrialModal from "./TrialModal";
 
 export default function InvoiceManager() {
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -97,6 +98,26 @@ export default function InvoiceManager() {
         productName="Invoice Manager"
       />
 
+      {/* Image Zoom Modal */}
+      {zoomedImage && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 cursor-zoom-out"
+          onClick={() => setZoomedImage(null)}
+        >
+          <button
+            onClick={() => setZoomedImage(null)}
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+          >
+            <X className="w-8 h-8" />
+          </button>
+          <img 
+            src={zoomedImage} 
+            alt="Zoomed dashboard view"
+            className="max-w-full max-h-full object-contain"
+          />
+        </div>
+      )}
+
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0">
@@ -155,6 +176,36 @@ export default function InvoiceManager() {
             <p className="text-lg text-gray-300 leading-relaxed">
               Simply take a photo of any invoice using your phone or upload a scanned document. Our advanced AI instantly recognizes and extracts all critical information including vendor details, invoice numbers, line items, amounts, dates, and payment terms. No manual typing required - the system automatically populates all fields with 99.9% accuracy, even handling handwritten invoices and complex multi-page documents.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Dashboard Demo Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-blue-500/10 text-blue-300 border-blue-500/20">
+              Live Dashboard
+            </Badge>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Powerful Analytics at Your Fingertips
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Get real-time insights into your invoice performance with our comprehensive dashboard
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <div 
+              className="rounded-2xl overflow-hidden border border-gray-800 shadow-2xl shadow-blue-500/10 cursor-pointer transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98]"
+              onClick={() => setZoomedImage("https://storage.googleapis.com/tempo-image-previews/user_34NSCeaX7cUfcqgytX4YHlnjfLI-1761822248496-Screenshot%202025-10-29%20125332.png")}
+            >
+              <img 
+                src="https://storage.googleapis.com/tempo-image-previews/user_34NSCeaX7cUfcqgytX4YHlnjfLI-1761822248496-Screenshot%202025-10-29%20125332.png" 
+                alt="Invoice Manager Dashboard Demo showing sales analytics, recent activity, and key metrics"
+                className="w-full h-auto"
+              />
+            </div>
           </div>
         </div>
       </section>
