@@ -183,6 +183,37 @@ export default function WhatsappAssistant() {
         </div>
       </section>
 
+      {/* Demo Video Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-blue-500/10 text-blue-300 border-blue-500/20">
+                See It In Action
+              </Badge>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Watch How It Works
+              </h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                See the WhatsApp Assistant in action and discover how it can transform your customer conversations
+              </p>
+            </div>
+            
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/20 border border-blue-500/20">
+              <div className="aspect-video">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/AmrMxlfCiA0"
+                  title="WhatsApp Assistant Demo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Grid */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
