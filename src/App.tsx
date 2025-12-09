@@ -7,6 +7,7 @@ import InvoiceManager from "./components/InvoiceManager";
 import LeadMachine from "./components/LeadMachine";
 import StockManager from "./components/StockManager";
 import Receptionist from "./components/Receptionist";
+import CustomSystems from "./components/CustomSystems";
 import About from "./components/About";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import NotFound from "./components/NotFound";
@@ -36,6 +37,7 @@ function App() {
           <Route path="/lead-machine" element={<LeadMachine />} />
           <Route path="/stock-manager" element={<StockManager />} />
           <Route path="/receptionist" element={<Receptionist />} />
+          <Route path="/custom-systems" element={<CustomSystems />} />
           <Route path="/about" element={<About />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NotFound />} />

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X, Calendar, Send } from "lucide-react";
+import { X, Calendar, Send, CheckCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
@@ -10,55 +10,62 @@ import { Label } from "./ui/label";
 interface DemoModalProps {
   isOpen: boolean;
   onClose: () => void;
+  productName: string;
 }
 
-export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
-  const [formData, setFormData] = useState({
-    email: "",
-    interest: "",
-  });
+export default function DemoModal({ isOpen, onClose, productName }: DemoModalProps) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-
-  if (!isOpen) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          access_key: '5a02c114-65b3-41ad-b0de-a18048ad3dec',
-          email: formData.email,
-          subject: 'New Demo Request - MAI Business Solutions',
-          message: `Demo Request Details:\n\nEmail: ${formData.email}\n\nInterest:\n${formData.interest}`,
-          from_name: 'MAI Business Solutions',
-          to: 'hakimluxeco@gmail.com',
+          access_key: "5a02c114-65b3-41ad-b0de-a18048ad3dec",
+          name,
+          email,
+          company,
+          message,
+          product: productName,
+          type: "Demo Request",
+          subject: `Demo Request - ${productName} from ${name}`,
+          from_name: "MAI Business Solutions",
+          to: "info@maisolutions.co.za",
         }),
       });
 
       const data = await response.json();
 
       if (data.success) {
-        toast({
-          title: "Demo Request Sent!",
-          description: "We'll contact you shortly to schedule your demo.",
-        });
-        setFormData({ email: "", interest: "" });
-        onClose();
+        setIsSuccess(true);
+        setTimeout(() => {
+          onClose();
+          setIsSuccess(false);
+          setName("");
+          setEmail("");
+          setCompany("");
+          setMessage("");
+        }, 2000);
       } else {
-        throw new Error(data.message || 'Failed to send');
+        throw new Error(data.message || "Failed to send");
       }
     } catch (error) {
-      console.error('Email error:', error);
+      console.error("Error submitting form:", error);
       toast({
         title: "Failed to submit",
-        description: "Please try again or contact us directly.",
+        description: "Please try again or email us directly at info@maisolutions.co.za",
         variant: "destructive",
       });
     } finally {
@@ -66,75 +73,99 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
     }
   };
 
+  if (!isOpen) return null;
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-      <Card className="w-full max-w-lg bg-gray-900 border-gray-800 relative">
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
-        >
-          <X className="w-5 h-5" />
-        </button>
-
-        <CardHeader className="text-center pb-4">
-          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-cyan-500 p-4 mx-auto mb-4">
-            <Calendar className="w-full h-full text-white" />
-          </div>
-          <CardTitle className="text-2xl text-white">Schedule a Demo</CardTitle>
-          <CardDescription className="text-gray-400">
-            Tell us about your needs and we'll get back to you shortly
-          </CardDescription>
-        </CardHeader>
-
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <Label htmlFor="email" className="text-gray-300 mb-2 block">
-                Email Address
-              </Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="your@email.com"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                required
-                className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500"
-              />
-            </div>
-
-            <div>
-              <Label htmlFor="interest" className="text-gray-300 mb-2 block">
-                What are you interested in?
-              </Label>
-              <Textarea
-                id="interest"
-                placeholder="Are you looking for a custom system or interested in one of our existing systems? (Invoice Manager, Lead Machine, Stock Manager)"
-                value={formData.interest}
-                onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                required
-                rows={5}
-                className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500 resize-none"
-              />
-            </div>
-
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white"
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+      <div className="bg-gray-900 rounded-2xl shadow-2xl max-w-md w-full border border-gray-800">
+        <div className="p-6">
+          <div className="flex items-center justify-between mb-6">
+            <h3 className="text-2xl font-bold text-white">Schedule a Demo</h3>
+            <button
+              onClick={onClose}
+              className="text-gray-400 hover:text-white transition-colors"
             >
-              {isSubmitting ? (
-                "Sending..."
-              ) : (
-                <>
-                  Send Request
-                  <Send className="ml-2 w-4 h-4" />
-                </>
-              )}
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+
+          <p className="text-gray-400 text-sm mb-6">
+            Fill out the form below and a link to the {productName} demo will be sent to your inbox.
+          </p>
+
+          {isSuccess ? (
+            <div className="text-center py-8">
+              <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+              <p className="text-white text-lg font-semibold mb-2">Request Submitted!</p>
+              <p className="text-gray-400">A link to the {productName} demo will be sent to your inbox</p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  Name *
+                </label>
+                <Input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                  className="bg-gray-800 border-gray-700 text-white"
+                  placeholder="Your Name"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  Email *
+                </label>
+                <Input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="bg-gray-800 border-gray-700 text-white"
+                  placeholder="your.name@company.com"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  Company
+                </label>
+                <Input
+                  type="text"
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
+                  className="bg-gray-800 border-gray-700 text-white"
+                  placeholder="Your Company"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  Message
+                </label>
+                <Textarea
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="bg-gray-800 border-gray-700 text-white"
+                  placeholder="Tell us about your needs..."
+                  rows={3}
+                />
+              </div>
+
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white"
+              >
+                {isSubmitting ? "Submitting..." : "Schedule Demo"}
+              </Button>
+            </form>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

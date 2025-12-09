@@ -34,7 +34,7 @@ export default function TrialModal({ isOpen, onClose, productName = "MAI Busines
           subject: `New Trial Request - ${productName}`,
           message: `New trial request from: ${email}\nProduct: ${productName}`,
           from_name: 'MAI Business Solutions',
-          to: 'hakimluxeco@gmail.com',
+          to: 'info@maisolutions.co.za',
         }),
       });
 
@@ -54,7 +54,7 @@ export default function TrialModal({ isOpen, onClose, productName = "MAI Busines
       console.error('Email error:', error);
       toast({
         title: "Failed to submit",
-        description: "Please try again or contact us directly.",
+        description: "Please try again or contact us directly at info@maisolutions.co.za",
         variant: "destructive",
       });
     } finally {

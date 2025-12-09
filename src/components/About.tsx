@@ -1,6 +1,7 @@
-import { ArrowLeft, Brain, Target, Zap, Users, Award, Lightbulb, TrendingUp, Shield } from "lucide-react";
+import { Brain, Target, Zap, Users, Award, Lightbulb, TrendingUp, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import Navbar from "./Navbar";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -42,21 +43,16 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+      <Navbar />
+      
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Link to="/">
-            <Button variant="ghost" className="text-gray-400 hover:text-white mb-8">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Button>
-          </Link>
-
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-6 bg-blue-500/10 text-blue-300 border-blue-500/20">
               About MAI Business Solutions

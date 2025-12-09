@@ -28,7 +28,6 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Using Web3Forms - free email service
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
@@ -42,6 +41,7 @@ export default function Contact() {
           message: formData.message,
           subject: `New contact from ${formData.name} - MAI Business Solutions`,
           from_name: "MAI Business Solutions",
+          to: "info@maisolutions.co.za",
         }),
       });
 
@@ -68,7 +68,7 @@ export default function Contact() {
       toast({
         title: "Failed to send message",
         description:
-          "Please try again or email us directly at info@maisolutions.qzz.io",
+          "Please try again or email us directly at info@maisolutions.co.za",
         variant: "destructive",
       });
     } finally {
@@ -138,7 +138,7 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder="Your Name"
                     className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-500 focus:border-blue-500 text-sm sm:text-base"
                     required
                     disabled={isSubmitting}
@@ -157,7 +157,7 @@ export default function Contact() {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="john@company.com"
+                    placeholder="your.name@company.com"
                     className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-500 focus:border-blue-500 text-sm sm:text-base"
                     required
                     disabled={isSubmitting}

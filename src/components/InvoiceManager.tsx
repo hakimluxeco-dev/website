@@ -1,14 +1,15 @@
-import { ArrowLeft, Camera, Zap, Clock, Globe, BarChart3, CheckCircle, FileText, Upload, Brain, Database, Shield, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Camera, Zap, Clock, Globe, BarChart3, CheckCircle, FileText, Upload, Brain, Database, Shield, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import Navbar from "./Navbar";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import TrialModal from "./TrialModal";
+import DemoModal from "./DemoModal";
 
 export default function InvoiceManager() {
-  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -92,9 +93,11 @@ export default function InvoiceManager() {
         <meta property="twitter:image" content="https://www.maisolutions.co.za/logo.svg" />
       </Helmet>
 
-      <TrialModal 
-        isOpen={isTrialModalOpen} 
-        onClose={() => setIsTrialModalOpen(false)}
+      <Navbar />
+
+      <DemoModal 
+        isOpen={isDemoModalOpen} 
+        onClose={() => setIsDemoModalOpen(false)}
         productName="Invoice Manager"
       />
 
@@ -119,20 +122,13 @@ export default function InvoiceManager() {
       )}
 
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Link to="/">
-            <Button variant="ghost" className="text-gray-400 hover:text-white mb-8">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Button>
-          </Link>
-
           <div className="max-w-4xl mx-auto text-center">
             <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 p-4 mx-auto mb-6 shadow-2xl shadow-blue-500/30">
               <FileText className="w-full h-full text-white" />
@@ -147,12 +143,9 @@ export default function InvoiceManager() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button 
-                onClick={() => setIsTrialModalOpen(true)}
+                onClick={() => setIsDemoModalOpen(true)}
                 className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white shadow-lg shadow-blue-500/30"
               >
-                Start Free Trial
-              </Button>
-              <Button variant="outline" className="border-gray-700 text-white hover:bg-gray-800">
                 Schedule Demo
               </Button>
             </div>
@@ -268,20 +261,17 @@ export default function InvoiceManager() {
           <Card className="max-w-4xl mx-auto bg-gradient-to-br from-blue-600 to-cyan-500 border-0 text-white">
             <CardContent className="p-12 text-center">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Ready to Automate Your Invoicing?
+                Ready to Transform Your WhatsApp Sales?
               </h2>
               <p className="text-xl text-blue-100 mb-8">
-                Join hundreds of businesses saving time and money with AI-powered invoice management
+                Join hundreds of businesses automating their customer conversations
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Button 
                   size="lg" 
-                  onClick={() => setIsTrialModalOpen(true)}
+                  onClick={() => setIsDemoModalOpen(true)}
                   className="bg-white text-blue-600 hover:bg-gray-100"
                 >
-                  Start Free Trial
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                   Contact Sales
                 </Button>
               </div>

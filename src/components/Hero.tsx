@@ -22,6 +22,7 @@ export default function Hero() {
       <DemoModal 
         isOpen={isDemoModalOpen} 
         onClose={() => setIsDemoModalOpen(false)}
+        productName="MAI Business Solutions"
       />
 
       {/* Animated Background Elements */}

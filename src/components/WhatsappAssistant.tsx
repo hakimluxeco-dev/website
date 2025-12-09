@@ -1,14 +1,17 @@
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft, MessageCircle, Clock, Brain, Users, Send, Image, Mic, Tag, CheckCircle, Zap, Shield, TrendingUp, Globe, X } from "lucide-react";
+import { MessageCircle, Clock, Brain, Users, Send, Image, Mic, Tag, CheckCircle, Zap, Shield, TrendingUp, Globe, X } from "lucide-react";
+import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import TrialModal from "./TrialModal";
+import DemoModal from "./DemoModal";
 
 export default function WhatsappAssistant() {
-  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -98,27 +101,22 @@ export default function WhatsappAssistant() {
         <meta property="twitter:image" content="https://www.maisolutions.co.za/logo.svg" />
       </Helmet>
 
-      <TrialModal 
-        isOpen={isTrialModalOpen} 
-        onClose={() => setIsTrialModalOpen(false)}
+      <Navbar />
+
+      <DemoModal 
+        isOpen={isDemoModalOpen} 
+        onClose={() => setIsDemoModalOpen(false)}
         productName="WhatsApp Assistant"
       />
 
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Link to="/">
-            <Button variant="ghost" className="text-gray-400 hover:text-white mb-8">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Button>
-          </Link>
-
           <div className="max-w-4xl mx-auto text-center">
             <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 p-4 mx-auto mb-6 shadow-2xl shadow-blue-500/30">
               <MessageCircle className="w-full h-full text-white" />
@@ -133,12 +131,9 @@ export default function WhatsappAssistant() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button
-                onClick={() => setIsTrialModalOpen(true)}
+                onClick={() => setIsDemoModalOpen(true)}
                 className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white shadow-lg shadow-blue-500/30"
               >
-                Start Free Trial
-              </Button>
-              <Button variant="outline" className="border-gray-700 text-white hover:bg-gray-800">
                 Schedule Demo
               </Button>
             </div>
@@ -280,12 +275,9 @@ export default function WhatsappAssistant() {
               <div className="flex flex-wrap gap-4 justify-center">
                 <Button
                   size="lg"
-                  onClick={() => setIsTrialModalOpen(true)}
+                  onClick={() => setIsDemoModalOpen(true)}
                   className="bg-white text-blue-600 hover:bg-gray-100"
                 >
-                  Start Free Trial
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                   Contact Sales
                 </Button>
               </div>

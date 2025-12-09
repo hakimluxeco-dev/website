@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import { Button } from "./ui/button";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,12 +18,22 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
+  const handleNavigation = (sectionId: string) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -39,17 +51,23 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <button
-              onClick={() => scrollToSection("hero")}
+              onClick={() => handleNavigation("hero")}
               className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm font-medium"
             >
               Home
             </button>
             <button
-              onClick={() => scrollToSection("products")}
+              onClick={() => handleNavigation("products")}
               className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm font-medium"
             >
               Products
             </button>
+            <Link
+              to="/custom-systems"
+              className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm font-medium"
+            >
+              Custom Systems
+            </Link>
             <Link
               to="/about"
               className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm font-medium"
@@ -57,7 +75,7 @@ export default function Navbar() {
               About Us
             </Link>
             <Button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => handleNavigation("contact")}
               className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white shadow-lg shadow-blue-500/30"
             >
               Get Started
@@ -78,17 +96,24 @@ export default function Navbar() {
           <div className="md:hidden py-4 border-t border-gray-800">
             <div className="flex flex-col gap-4">
               <button
-                onClick={() => scrollToSection("hero")}
+                onClick={() => handleNavigation("hero")}
                 className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-left py-2"
               >
                 Home
               </button>
               <button
-                onClick={() => scrollToSection("products")}
+                onClick={() => handleNavigation("products")}
                 className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-left py-2"
               >
                 Products
               </button>
+              <Link
+                to="/custom-systems"
+                className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-left py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Custom Systems
+              </Link>
               <Link
                 to="/about"
                 className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-left py-2"
@@ -97,7 +122,7 @@ export default function Navbar() {
                 About Us
               </Link>
               <Button
-                onClick={() => scrollToSection("contact")}
+                onClick={() => handleNavigation("contact")}
                 className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white w-full"
               >
                 Get Started

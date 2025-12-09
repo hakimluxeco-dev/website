@@ -1,14 +1,15 @@
-import { ArrowLeft, Package, Brain, TrendingUp, Warehouse, AlertTriangle, BarChart3, CheckCircle, Zap, RefreshCw, Globe, ShoppingCart, Clock, LineChart } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Package, Brain, TrendingUp, Warehouse, AlertTriangle, BarChart3, CheckCircle, Zap, RefreshCw, Globe, ShoppingCart, Clock, LineChart } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import Navbar from "./Navbar";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import TrialModal from "./TrialModal";
+import DemoModal from "./DemoModal";
 
 export default function StockManager() {
-  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -113,27 +114,22 @@ export default function StockManager() {
         <meta property="twitter:image" content="https://www.maisolutions.co.za/logo.svg" />
       </Helmet>
 
-      <TrialModal 
-        isOpen={isTrialModalOpen} 
-        onClose={() => setIsTrialModalOpen(false)}
+      <Navbar />
+
+      <DemoModal 
+        isOpen={isDemoModalOpen} 
+        onClose={() => setIsDemoModalOpen(false)}
         productName="Stock Manager"
       />
 
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Link to="/">
-            <Button variant="ghost" className="text-gray-400 hover:text-white mb-8">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Button>
-          </Link>
-
           <div className="max-w-4xl mx-auto text-center">
             <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-600 to-cyan-500 p-4 mx-auto mb-6 shadow-2xl shadow-indigo-500/30">
               <Package className="w-full h-full text-white" />
@@ -148,12 +144,9 @@ export default function StockManager() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button 
-                onClick={() => setIsTrialModalOpen(true)}
+                onClick={() => setIsDemoModalOpen(true)}
                 className="bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-700 hover:to-cyan-600 text-white shadow-lg shadow-indigo-500/30"
               >
-                Start Free Trial
-              </Button>
-              <Button variant="outline" className="border-gray-700 text-white hover:bg-gray-800">
                 Schedule Demo
               </Button>
             </div>
@@ -258,12 +251,9 @@ export default function StockManager() {
               <div className="flex flex-wrap gap-4 justify-center">
                 <Button 
                   size="lg" 
-                  onClick={() => setIsTrialModalOpen(true)}
+                  onClick={() => setIsDemoModalOpen(true)}
                   className="bg-white text-indigo-600 hover:bg-gray-100"
                 >
-                  Start Free Trial
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                   Contact Sales
                 </Button>
               </div>
