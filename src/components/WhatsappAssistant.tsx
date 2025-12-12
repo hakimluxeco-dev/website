@@ -20,8 +20,8 @@ export default function WhatsappAssistant() {
   const features = [
     {
       icon: <Clock className="w-6 h-6" />,
-      title: "24/7 AI-Powered Sales Agent",
-      description: "Never miss a lead. Your AI assistant works around the clock, engaging customers instantly and qualifying prospects automatically.",
+      title: "24/7 Smart Automation Sales Agent",
+      description: "Never miss a lead. Your automated assistant works around the clock, engaging customers instantly and qualifying prospects automatically.",
     },
     {
       icon: <Brain className="w-6 h-6" />,
@@ -79,15 +79,15 @@ export default function WhatsappAssistant() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
       <Helmet>
-        <title>WhatsApp Assistant - AI-Powered Sales Agent | MAI Business Solutions</title>
-        <meta name="description" content="24/7 AI-powered WhatsApp assistant that handles conversations, qualifies leads, and sends personalized broadcasts. Save 10+ hours a week and convert more leads with intelligent automation." />
+        <title>WhatsApp Assistant - Smart Automation Sales Agent | MAI Business Solutions</title>
+        <meta name="description" content="24/7 automated WhatsApp assistant that handles conversations, qualifies leads, and sends personalized broadcasts. Save 10+ hours a week and convert more leads with intelligent automation." />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.maisolutions.co.za/whatsapp-assistant" />
         <meta property="og:site_name" content="MAI Business Solutions" />
-        <meta property="og:title" content="WhatsApp Assistant - AI-Powered Sales Agent" />
-        <meta property="og:description" content="24/7 AI-powered WhatsApp assistant that handles conversations, qualifies leads, and sends personalized broadcasts. Save 10+ hours a week and convert more leads." />
+        <meta property="og:title" content="WhatsApp Assistant - Smart Automation Sales Agent" />
+        <meta property="og:description" content="24/7 automated WhatsApp assistant that handles conversations, qualifies leads, and sends personalized broadcasts. Save 10+ hours a week and convert more leads." />
         <meta property="og:image" content="https://www.maisolutions.co.za/logo.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -96,8 +96,8 @@ export default function WhatsappAssistant() {
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.maisolutions.co.za/whatsapp-assistant" />
-        <meta property="twitter:title" content="WhatsApp Assistant - AI-Powered Sales Agent" />
-        <meta property="twitter:description" content="24/7 AI-powered WhatsApp assistant that handles conversations, qualifies leads, and sends personalized broadcasts. Save 10+ hours a week and convert more leads." />
+        <meta property="twitter:title" content="WhatsApp Assistant - Smart Automation Sales Agent" />
+        <meta property="twitter:description" content="24/7 automated WhatsApp assistant that handles conversations, qualifies leads, and sends personalized broadcasts. Save 10+ hours a week and convert more leads." />
         <meta property="twitter:image" content="https://www.maisolutions.co.za/logo.svg" />
       </Helmet>
 
@@ -127,7 +127,7 @@ export default function WhatsappAssistant() {
               </span>
             </h1>
             <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-              Your 24/7 AI-powered sales agent that engages leads instantly, qualifies prospects, and scales your WhatsApp conversations effortlessly
+              Your 24/7 automated sales agent that engages leads instantly, qualifies prospects, and scales your WhatsApp conversations effortlessly
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button

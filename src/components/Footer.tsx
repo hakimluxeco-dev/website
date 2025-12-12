@@ -63,7 +63,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/receptionist" className="text-gray-400 hover:text-blue-400 text-xs sm:text-sm transition-colors">
-                  AI Receptionist
+                  Virtual Receptionist
                 </Link>
               </li>
             </ul>

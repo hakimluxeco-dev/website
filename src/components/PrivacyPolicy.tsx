@@ -26,7 +26,7 @@ export default function PrivacyPolicy() {
       icon: <Lock className="w-6 h-6" />,
       title: "How We Use Your Information",
       content: [
-        "To provide and maintain our AI-powered business solutions",
+        "To provide and maintain our smart automation business solutions",
         "To process transactions and send service-related communications",
         "To improve and optimize our products and services",
         "To provide customer support and respond to inquiries",
@@ -123,7 +123,7 @@ export default function PrivacyPolicy() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-3 sm:mb-4">
-              MAI Business Solutions ("we" "us" or "our") is committed to protecting your privacy This Privacy Policy explains how we collect use disclose and safeguard your information when you use our AI-powered business solutions and services
+              MAI Business Solutions ("we" "us" or "our") is committed to protecting your privacy This Privacy Policy explains how we collect use disclose and safeguard your information when you use our smart automation business solutions and services
             </p>
             <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
               By using our services you agree to the collection and use of information in accordance with this policy If you do not agree with our policies and practices please do not use our services

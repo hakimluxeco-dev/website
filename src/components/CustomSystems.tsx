@@ -25,8 +25,8 @@ export default function CustomSystems() {
   const capabilities = [
     {
       icon: <Sparkles className="w-6 h-6" />,
-      title: "Custom AI Agents",
-      description: "Create bespoke AI employees to handle specific tasks, like analyzing customer support tickets, qualifying new leads with custom criteria, or monitoring industry news for you.",
+      title: "Custom Automation Agents",
+      description: "Create bespoke automated assistants to handle specific tasks, like analyzing customer support tickets, qualifying new leads with custom criteria, or monitoring industry news for you.",
       gradient: "from-blue-600 to-cyan-500"
     },
     {
@@ -83,7 +83,7 @@ export default function CustomSystems() {
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
       <Helmet>
         <title>Custom Systems - MAI Business Solutions</title>
-        <meta name="description" content="Bespoke AI & Automation solutions built specifically for your business needs" />
+        <meta name="description" content="Bespoke automation solutions built specifically for your business needs" />
       </Helmet>
 
       <Navbar />
@@ -110,7 +110,7 @@ export default function CustomSystems() {
             </h1>
             <div className="h-1 w-24 mx-auto bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full mb-8"></div>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Introducing MAI Custom Systems: Bespoke AI & Automation, Built For You.
+              Introducing MAI Custom Systems: Bespoke Automation Solutions, Built For You.
             </p>
           </div>
         </div>
@@ -131,7 +131,7 @@ export default function CustomSystems() {
                 Off-the-shelf software forces you to change your processes to fit its limitations. We believe software should do the opposite: it should be molded to fit your exact needs, enhancing the processes that already make you successful.
               </p>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                Our Custom Systems service applies the same <span className="text-blue-400 font-semibold">"Intelligence. Growth. Efficiency."</span> philosophy from our core products to build a solution that is 100% tailored to your business. If you can describe a manual task, a data bottleneck, or an inefficient workflow, we can design and build an AI-powered system to solve it.
+                Our Custom Systems service applies the same <span className="text-blue-400 font-semibold">"Intelligence. Growth. Efficiency."</span> philosophy from our core products to build a solution that is 100% tailored to your business. If you can describe a manual task, a data bottleneck, or an inefficient workflow, we can design and build an smart automation system to solve it.
               </p>
               <p className="text-xl text-white font-semibold">
                 Don't let your business be constrained by generic software. Let us build the exact tool you need to operate at full potential.
@@ -149,7 +149,7 @@ export default function CustomSystems() {
               What We Can Build For You
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              Our expertise is in AI-powered automation. We can build anything you need, including:
+              Our expertise is in intelligent automation. We can build anything you need, including:
             </p>
           </div>
 

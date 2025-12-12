@@ -19,7 +19,7 @@ export default function Receptionist() {
     {
       icon: <Clock className="w-6 h-6" />,
       title: "24/7 Availability",
-      description: "Never miss a call again with round-the-clock AI receptionist service that answers instantly"
+      description: "Never miss a call again with round-the-clock automated receptionist service that answers instantly"
     },
     {
       icon: <Brain className="w-6 h-6" />,
@@ -70,15 +70,15 @@ export default function Receptionist() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
       <Helmet>
-        <title>AI Receptionist - 24/7 Phone Answering Service | MAI Business Solutions</title>
-        <meta name="description" content="A 24/7 AI Voice Agent that answers every call, takes messages, and books appointments - ensuring you never miss an opportunity. Professional phone answering with natural conversations, multi-language support, and CRM integration. Capture 100% of incoming leads." />
+        <title>Virtual Receptionist - 24/7 Phone Answering Service | MAI Business Solutions</title>
+        <meta name="description" content="A 24/7 automated phone system that answers every call, takes messages, and books appointments - ensuring you never miss an opportunity. Professional phone answering with natural conversations, multi-language support, and CRM integration. Capture 100% of incoming leads." />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.maisolutions.co.za/receptionist" />
         <meta property="og:site_name" content="MAI Business Solutions" />
-        <meta property="og:title" content="AI Receptionist - 24/7 Phone Answering Service" />
-        <meta property="og:description" content="A 24/7 AI Voice Agent that answers every call, takes messages, and books appointments. Never miss an opportunity with professional phone answering, natural conversations, and multi-language support. Capture 100% of incoming leads." />
+        <meta property="og:title" content="Virtual Receptionist - 24/7 Phone Answering Service" />
+        <meta property="og:description" content="A 24/7 automated phone system that answers every call, takes messages, and books appointments. Never miss an opportunity with professional phone answering, natural conversations, and multi-language support. Capture 100% of incoming leads." />
         <meta property="og:image" content="https://www.maisolutions.co.za/logo.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -87,8 +87,8 @@ export default function Receptionist() {
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.maisolutions.co.za/receptionist" />
-        <meta property="twitter:title" content="AI Receptionist - 24/7 Phone Answering Service" />
-        <meta property="twitter:description" content="A 24/7 AI Voice Agent that answers every call, takes messages, and books appointments. Never miss an opportunity with professional phone answering and multi-language support." />
+        <meta property="twitter:title" content="Virtual Receptionist - 24/7 Phone Answering Service" />
+        <meta property="twitter:description" content="A 24/7 automated phone system that answers every call, takes messages, and books appointments. Never miss an opportunity with professional phone answering and multi-language support." />
         <meta property="twitter:image" content="https://www.maisolutions.co.za/logo.svg" />
       </Helmet>
 
@@ -114,11 +114,11 @@ export default function Receptionist() {
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                AI Receptionist
+                Virtual Receptionist
               </span>
             </h1>
             <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-              A 24/7 AI Voice Agent that answers every call, takes messages, and books appointments - ensuring you never miss an opportunity
+              A 24/7 automated phone system that answers every call, takes messages, and books appointments - ensuring you never miss an opportunity
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button 
@@ -142,11 +142,11 @@ export default function Receptionist() {
               </div>
               <div>
                 <h2 className="text-3xl font-bold text-white">Never Miss a Call Again</h2>
-                <p className="text-blue-300">Your AI-powered phone answering solution</p>
+                <p className="text-blue-300">Your smart phone answering solution</p>
               </div>
             </div>
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              Our AI Receptionist answers your phone 24/7 with a professional, human-like voice. It can handle basic customer inquiries, take detailed messages with caller information, and even book appointments directly into your calendar system. The AI understands natural conversation, asks clarifying questions when needed, and ensures every caller receives immediate, professional attention.
+              Our Virtual Receptionist answers your phone 24/7 with a professional, human-like voice. It can handle basic customer inquiries, take detailed messages with caller information, and even book appointments directly into your calendar system. The system understands natural conversation, asks clarifying questions when needed, and ensures every caller receives immediate, professional attention.
             </p>
             <div className="grid sm:grid-cols-3 gap-4 mt-8">
               <div className="bg-gray-900/50 p-6 rounded-lg border border-blue-500/20">

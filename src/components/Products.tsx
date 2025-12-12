@@ -19,16 +19,16 @@ const products: Product[] = [
   {
     id: "whatsapp-assistant",
     title: "WhatsApp Assistant",
-    description: "24/7 AI-powered sales agent that engages leads instantly, qualifies prospects, and automates your WhatsApp conversations.",
+    description: "24/7 automated sales assistant that engages leads instantly, qualifies prospects, and manages your WhatsApp conversations.",
     icon: <MessageCircle className="w-8 h-8" />,
-    features: ["24/7 AI Sales Agent", "Personalized Broadcasts", "Smart Segmentation", "Rich Media Messaging", "Voice Enabled"],
+    features: ["24/7 Sales Automation", "Personalized Broadcasts", "Smart Segmentation", "Rich Media Messaging", "Voice Enabled"],
     color: "blue",
     gradient: "from-blue-600 to-cyan-500",
   },
   {
     id: "invoice-manager",
     title: "Invoice Manager",
-    description: "Automate your invoicing process with AI-powered document processing and intelligent payment tracking.",
+    description: "Automate your invoicing process with smart document processing and intelligent payment tracking.",
     icon: <FileText className="w-8 h-8" />,
     features: ["Automated Invoice Generation", "Smart Payment Tracking", "Multi-Currency Support", "Real-time Analytics"],
     color: "blue",
@@ -37,9 +37,9 @@ const products: Product[] = [
   {
     id: "lead-machine",
     title: "Lead Machine",
-    description: "Transform your sales pipeline with AI-driven lead generation, scoring, and nurturing capabilities.",
+    description: "Transform your sales pipeline with intelligent lead generation, scoring, and nurturing capabilities.",
     icon: <Users className="w-8 h-8" />,
-    features: ["AI Lead Scoring", "Automated Outreach", "CRM Integration", "Conversion Analytics"],
+    features: ["Smart Lead Scoring", "Automated Outreach", "CRM Integration", "Conversion Analytics"],
     color: "cyan",
     gradient: "from-cyan-600 to-blue-500",
   },
@@ -54,8 +54,8 @@ const products: Product[] = [
   },
   {
     id: "receptionist",
-    title: "AI Receptionist",
-    description: "24/7 AI voice agent that answers calls, takes messages, and books appointments automatically.",
+    title: "Virtual Receptionist",
+    description: "24/7 automated phone system that answers calls, takes messages, and books appointments automatically.",
     icon: <Phone className="w-8 h-8" />,
     features: ["24/7 Call Answering", "Appointment Booking", "Message Taking", "Multi-Language Support"],
     color: "blue",
@@ -87,11 +87,11 @@ export default function Products() {
           </Badge>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-4">
             <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-              Flagship AI Systems
+              Business Solutions That Work
             </span>
           </h2>
           <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto px-4">
-            Powerful AI-driven solutions designed to revolutionize your business operations
+            Powerful automation tools designed to streamline your operations and drive growth
           </p>
         </div>
 

@@ -1,4 +1,4 @@
-import { Target, Brain, Zap, TrendingUp, Users, Mail, BarChart3, CheckCircle, Sparkles, Globe, MessageSquare, Filter, Workflow, X } from "lucide-react";
+import { Target, Lightbulb, Zap, TrendingUp, Users, Mail, BarChart3, CheckCircle, Sparkles, Globe, MessageSquare, Filter, Workflow, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "./Navbar";
@@ -18,9 +18,9 @@ export default function LeadMachine() {
 
   const features = [
     {
-      icon: <Brain className="w-6 h-6" />,
-      title: "AI-Powered Lead Scoring",
-      description: "Machine learning algorithms analyze 50+ data points to predict lead quality and conversion probability in real-time"
+      icon: <Lightbulb className="w-6 h-6" />,
+      title: "Smart Automation Lead Scoring",
+      description: "Smart algorithms analyze 50+ data points to predict lead quality and conversion probability in real-time"
     },
     {
       icon: <Target className="w-6 h-6" />,
@@ -93,15 +93,15 @@ export default function LeadMachine() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
       <Helmet>
-        <title>Lead Machine - AI-Powered Lead Generation | MAI Business Solutions</title>
-        <meta name="description" content="The most advanced AI-powered lead generation and sales acceleration platform. Increase qualified leads by 300%, reduce acquisition costs by 50%, and improve conversion rates by 45%. AI-powered lead scoring, intelligent prospecting, and multi-channel outreach." />
+        <title>Lead Machine - Smart Automation Lead Generation | MAI Business Solutions</title>
+        <meta name="description" content="The most advanced lead generation and sales acceleration platform. Increase qualified leads by 300%, reduce acquisition costs by 50%, and improve conversion rates by 45%. Smart lead scoring, intelligent prospecting, and multi-channel outreach." />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.maisolutions.co.za/lead-machine" />
         <meta property="og:site_name" content="MAI Business Solutions" />
-        <meta property="og:title" content="Lead Machine - AI-Powered Lead Generation & Sales Acceleration" />
-        <meta property="og:description" content="The most advanced AI-powered lead generation platform. Increase qualified leads by 300%, reduce acquisition costs by 50%, and improve conversion rates by 45%. AI-powered lead scoring, intelligent prospecting, and multi-channel outreach." />
+        <meta property="og:title" content="Lead Machine - Smart Automation Lead Generation & Sales Acceleration" />
+        <meta property="og:description" content="The most advanced lead generation platform. Increase qualified leads by 300%, reduce acquisition costs by 50%, and improve conversion rates by 45%. Smart lead scoring, intelligent prospecting, and multi-channel outreach." />
         <meta property="og:image" content="https://www.maisolutions.co.za/logo.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -110,8 +110,8 @@ export default function LeadMachine() {
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.maisolutions.co.za/lead-machine" />
-        <meta property="twitter:title" content="Lead Machine - AI-Powered Lead Generation" />
-        <meta property="twitter:description" content="Increase qualified leads by 300%, reduce acquisition costs by 50%, and improve conversion rates by 45%. AI-powered lead scoring, intelligent prospecting, and multi-channel outreach." />
+        <meta property="twitter:title" content="Lead Machine - Smart Automation Lead Generation" />
+        <meta property="twitter:description" content="Increase qualified leads by 300%, reduce acquisition costs by 50%, and improve conversion rates by 45%. Smart lead scoring, intelligent prospecting, and multi-channel outreach." />
         <meta property="twitter:image" content="https://www.maisolutions.co.za/logo.svg" />
       </Helmet>
 
@@ -161,7 +161,7 @@ export default function LeadMachine() {
               </span>
             </h1>
             <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-              The most advanced AI-powered lead generation and sales acceleration platform
+              The most advanced lead generation and sales acceleration platform
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button 
@@ -278,7 +278,7 @@ export default function LeadMachine() {
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-600 to-blue-500 p-4 mx-auto mb-4">
                     <Sparkles className="w-full h-full text-white" />
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">AI-Powered</h3>
+                  <h3 className="text-lg font-semibold text-white mb-2">Smart Automation</h3>
                   <p className="text-sm text-gray-400">Smart automation for maximum efficiency</p>
                 </div>
               </div>
@@ -298,7 +298,7 @@ export default function LeadMachine() {
               Everything You Need to Dominate Lead Generation
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Enterprise-grade features powered by cutting-edge AI and machine learning
+              Enterprise-grade features powered by cutting-edge technology and intelligent automation
             </p>
           </div>
 

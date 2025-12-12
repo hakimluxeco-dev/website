@@ -1,4 +1,4 @@
-import { Camera, Zap, Clock, Globe, BarChart3, CheckCircle, FileText, Upload, Brain, Database, Shield, X } from "lucide-react";
+import { Camera, Zap, Clock, Globe, BarChart3, CheckCircle, FileText, Upload, Lightbulb, Database, Shield, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "./Navbar";
@@ -19,13 +19,13 @@ export default function InvoiceManager() {
   const features = [
     {
       icon: <Camera className="w-6 h-6" />,
-      title: "AI Image Capture",
-      description: "Simply snap a photo of any invoice and our AI instantly extracts all information with 99.9% accuracy"
+      title: "Smart Image Capture",
+      description: "Simply snap a photo of any invoice and our system instantly extracts all information with 99.9% accuracy"
     },
     {
-      icon: <Brain className="w-6 h-6" />,
+      icon: <Lightbulb className="w-6 h-6" />,
       title: "Intelligent Data Extraction",
-      description: "Advanced OCR and machine learning automatically identify vendor details, line items, totals, and dates"
+      description: "Advanced OCR and smart algorithms automatically identify vendor details, line items, totals, and dates"
     },
     {
       icon: <Zap className="w-6 h-6" />,
@@ -71,15 +71,15 @@ export default function InvoiceManager() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
       <Helmet>
-        <title>Invoice Manager - AI-Powered Invoice Processing | MAI Business Solutions</title>
-        <meta name="description" content="Transform invoice processing with AI-powered image capture and intelligent data extraction. Simply snap a photo of any invoice and our AI instantly extracts all information with 99.9% accuracy. Reduce processing time by 90%." />
+        <title>Invoice Manager - Smart Automation Invoice Processing | MAI Business Solutions</title>
+        <meta name="description" content="Transform invoice processing with AI-powered image capture and intelligent data extraction. Simply snap a photo of any invoice and our system instantly extracts all information with 99.9% accuracy. Reduce processing time by 90%." />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.maisolutions.co.za/invoice-manager" />
         <meta property="og:site_name" content="MAI Business Solutions" />
-        <meta property="og:title" content="Invoice Manager - AI-Powered Invoice Processing" />
-        <meta property="og:description" content="Transform invoice processing with AI-powered image capture and intelligent data extraction. Simply snap a photo of any invoice and our AI instantly extracts all information with 99.9% accuracy. Reduce processing time by 90%." />
+        <meta property="og:title" content="Invoice Manager - Smart Automation Invoice Processing" />
+        <meta property="og:description" content="Transform invoice processing with AI-powered image capture and intelligent data extraction. Simply snap a photo of any invoice and our system instantly extracts all information with 99.9% accuracy. Reduce processing time by 90%." />
         <meta property="og:image" content="https://www.maisolutions.co.za/logo.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -88,8 +88,8 @@ export default function InvoiceManager() {
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.maisolutions.co.za/invoice-manager" />
-        <meta property="twitter:title" content="Invoice Manager - AI-Powered Invoice Processing" />
-        <meta property="twitter:description" content="Transform invoice processing with AI-powered image capture and intelligent data extraction. Simply snap a photo of any invoice and our AI instantly extracts all information with 99.9% accuracy." />
+        <meta property="twitter:title" content="Invoice Manager - Smart Automation Invoice Processing" />
+        <meta property="twitter:description" content="Transform invoice processing with AI-powered image capture and intelligent data extraction. Simply snap a photo of any invoice and our system instantly extracts all information with 99.9% accuracy." />
         <meta property="twitter:image" content="https://www.maisolutions.co.za/logo.svg" />
       </Helmet>
 

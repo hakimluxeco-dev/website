@@ -59,7 +59,7 @@ export default function NotFound() {
             </Link>
             <span className="text-gray-700">•</span>
             <Link to="/receptionist" className="text-blue-400 hover:text-blue-300 transition-colors">
-              AI Receptionist
+              Virtual Receptionist
             </Link>
           </div>
         </div>

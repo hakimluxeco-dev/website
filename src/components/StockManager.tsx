@@ -1,4 +1,4 @@
-import { Package, Brain, TrendingUp, Warehouse, AlertTriangle, BarChart3, CheckCircle, Zap, RefreshCw, Globe, ShoppingCart, Clock, LineChart } from "lucide-react";
+import { Package, TrendingUp, Warehouse, AlertTriangle, BarChart3, CheckCircle, Zap, RefreshCw, Globe, ShoppingCart, Clock, LineChart, Lightbulb } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "./Navbar";
@@ -17,9 +17,9 @@ export default function StockManager() {
 
   const features = [
     {
-      icon: <Brain className="w-6 h-6" />,
+      icon: <Lightbulb className="w-6 h-6" />,
       title: "Predictive Inventory Analytics",
-      description: "AI forecasts demand patterns using historical data, seasonality, trends, and market signals to optimize stock levels"
+      description: "Smart forecasting predicts demand patterns using historical data, seasonality, trends, and market signals to optimize stock levels"
     },
     {
       icon: <RefreshCw className="w-6 h-6" />,
@@ -34,7 +34,7 @@ export default function StockManager() {
     {
       icon: <TrendingUp className="w-6 h-6" />,
       title: "Demand Forecasting",
-      description: "Machine learning predicts future demand with 95% accuracy using sales history, market trends, and external factors"
+      description: "Smart algorithms predict future demand with 95% accuracy using sales history, market trends, and external factors"
     },
     {
       icon: <AlertTriangle className="w-6 h-6" />,
@@ -92,15 +92,15 @@ export default function StockManager() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
       <Helmet>
-        <title>Stock Manager - AI-Powered Inventory Optimization | MAI Business Solutions</title>
-        <meta name="description" content="AI-powered inventory optimization with predictive analytics and automated replenishment. Reduce inventory costs by 30-40%, improve accuracy to 99%+, and eliminate stockouts. Machine learning predicts demand with 95% accuracy." />
+        <title>Stock Manager - Smart Automation Inventory Optimization | MAI Business Solutions</title>
+        <meta name="description" content="Intelligent inventory optimization with predictive analytics and automated replenishment. Reduce inventory costs by 30-40%, improve accuracy to 99%+, and eliminate stockouts. Smart forecasting predicts demand with 95% accuracy." />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.maisolutions.co.za/stock-manager" />
         <meta property="og:site_name" content="MAI Business Solutions" />
-        <meta property="og:title" content="Stock Manager - AI-Powered Inventory Optimization" />
-        <meta property="og:description" content="AI-powered inventory optimization with predictive analytics and automated replenishment. Reduce inventory costs by 30-40%, improve accuracy to 99%+, and eliminate stockouts. Machine learning predicts demand with 95% accuracy." />
+        <meta property="og:title" content="Stock Manager - Smart Automation Inventory Optimization" />
+        <meta property="og:description" content="Intelligent inventory optimization with predictive analytics and automated replenishment. Reduce inventory costs by 30-40%, improve accuracy to 99%+, and eliminate stockouts. Smart forecasting predicts demand with 95% accuracy." />
         <meta property="og:image" content="https://www.maisolutions.co.za/logo.svg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -109,8 +109,8 @@ export default function StockManager() {
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.maisolutions.co.za/stock-manager" />
-        <meta property="twitter:title" content="Stock Manager - AI-Powered Inventory Optimization" />
-        <meta property="twitter:description" content="Reduce inventory costs by 30-40%, improve accuracy to 99%+, and eliminate stockouts. Machine learning predicts demand with 95% accuracy using AI-powered analytics." />
+        <meta property="twitter:title" content="Stock Manager - Smart Automation Inventory Optimization" />
+        <meta property="twitter:description" content="Reduce inventory costs by 30-40%, improve accuracy to 99%+, and eliminate stockouts. Smart forecasting predicts demand with 95% accuracy using intelligent analytics." />
         <meta property="twitter:image" content="https://www.maisolutions.co.za/logo.svg" />
       </Helmet>
 

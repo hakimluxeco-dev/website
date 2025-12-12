@@ -1,4 +1,4 @@
-import { Brain, Target, Zap, Users, Award, Lightbulb, TrendingUp, Shield } from "lucide-react";
+import { Lightbulb, Target, Zap, Users, Award, TrendingUp, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./Navbar";
@@ -13,9 +13,9 @@ export default function About() {
 
   const values = [
     {
-      icon: <Brain className="w-6 h-6" />,
+      icon: <Lightbulb className="w-6 h-6" />,
       title: "Innovation First",
-      description: "We push the boundaries of AI technology to deliver solutions that transform businesses"
+      description: "We push the boundaries of technology to deliver solutions that transform businesses"
     },
     {
       icon: <Target className="w-6 h-6" />,
@@ -59,11 +59,11 @@ export default function About() {
             </Badge>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                Pioneering AI-Powered Business Transformation
+                Smart Solutions for Modern Business
               </span>
             </h1>
             <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
-              At MAI Business Solutions we're redefining how businesses harness the power of artificial intelligence making enterprise grade AI tools accessible to businesses of all sizes
+              At MAI Business Solutions we're redefining how businesses operate with intelligent automation tools that make enterprise-grade solutions accessible to businesses of all sizes
             </p>
           </div>
         </div>
@@ -83,10 +83,10 @@ export default function About() {
               </div>
             </div>
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              We believe every business deserves access to cutting-edge AI technology Our goal is to bridge the gap between complex artificial intelligence and real-world business needs delivering solutions that are powerful yet intuitive sophisticated yet accessible
+              We believe every business deserves access to cutting-edge technology. Our goal is to bridge the gap between complex automation systems and real-world business needs, delivering solutions that are powerful yet intuitive, sophisticated yet accessible.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed">
-              We're not just building software we're creating intelligent systems that learn adapt and evolve with businesses From automating repetitive tasks to uncovering hidden insights of your business we help you work smarter faster and more efficiently
+              We're not just building software—we're creating intelligent systems that adapt and evolve with your business. From automating repetitive tasks to uncovering hidden insights, we help you work smarter, faster, and more efficiently.
             </p>
           </div>
         </div>
@@ -161,13 +161,13 @@ export default function About() {
             </div>
             <div className="space-y-6 text-gray-300 leading-relaxed">
               <p className="text-lg">
-                MAI Business Solutions was founded with a simple yet powerful vision: to make artificial intelligence work for businesses, not the other way around. We saw too many companies struggling with complex, expensive AI implementations that promised the world but delivered little.
+                MAI Business Solutions was founded with a simple yet powerful vision: to make intelligent automation work for businesses, not the other way around. We saw too many companies struggling with complex, expensive systems that promised the world but delivered little.
               </p>
               <p className="text-lg">
-                Our founders, with decades of combined experience in AI research and business operations, set out to create something different—intelligent systems that are practical, affordable, and genuinely transformative. We started with three flagship products: Invoice Manager, Lead Machine, and Stock Manager, each designed to solve real business pain points with elegant AI-powered solutions.
+                Our founders, with decades of combined experience in technology and business operations, set out to create something different—intelligent systems that are practical, affordable, and genuinely transformative. We started with our flagship products: Invoice Manager, Lead Machine, and Stock Manager, each designed to solve real business pain points with elegant, smart solutions.
               </p>
               <p className="text-lg">
-                Today, we're proud to serve hundreds of businesses across industries, helping them automate processes, reduce costs, and unlock new growth opportunities. But we're just getting started. Our commitment to innovation means we're constantly evolving our solutions, exploring new AI capabilities, and finding new ways to deliver value to our clients.
+                Today, we're proud to serve hundreds of businesses across industries, helping them automate processes, reduce costs, and unlock new growth opportunities. But we're just getting started. Our commitment to innovation means we're constantly evolving our solutions and finding new ways to deliver value to our clients.
               </p>
             </div>
           </div>
@@ -184,14 +184,14 @@ export default function About() {
               </div>
               <div>
                 <h2 className="text-3xl font-bold text-white">Our Expertise</h2>
-                <p className="text-blue-300">Cutting-edge AI technology meets business acumen</p>
+                <p className="text-blue-300">Technology meets business acumen</p>
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="p-6 rounded-lg bg-gray-800/50 border border-gray-700">
-                <h3 className="text-xl font-semibold text-white mb-3">AI & Machine Learning</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Intelligent Automation</h3>
                 <p className="text-gray-400">
-                  Advanced neural networks, computer vision, natural language processing, and predictive analytics
+                  Smart systems that learn from your business patterns to automate repetitive tasks and workflows
                 </p>
               </div>
               <div className="p-6 rounded-lg bg-gray-800/50 border border-gray-700">
@@ -207,9 +207,9 @@ export default function About() {
                 </p>
               </div>
               <div className="p-6 rounded-lg bg-gray-800/50 border border-gray-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Custom AI Solutions</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Custom Solutions</h3>
                 <p className="text-gray-400">
-                  Tailored AI systems designed specifically for your unique business challenges and goals
+                  Tailored systems designed specifically for your unique business challenges and goals
                 </p>
               </div>
             </div>

@@ -45,21 +45,21 @@ export default function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6 sm:mb-8">
             <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-            <span className="text-xs sm:text-sm text-blue-300 font-medium">AI-Powered Business Transformation</span>
+            <span className="text-xs sm:text-sm text-blue-300 font-medium">Smart Business Solutions</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2">
             <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent">
-              Transform Your Business
+              Streamline Your Business
             </span>
             <br />
-            <span className="text-white">with AI Intelligence</span>
+            <span className="text-white">with Smart Solutions</span>
           </h1>
 
           {/* Subheading */}
           <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
-            Harness the power of artificial intelligence to streamline operations, boost productivity, and drive growth with our cutting-edge AI solutions.
+            Automate operations, boost productivity, and drive growth with our intelligent business solutions designed to solve real challenges.
           </p>
 
           {/* CTA Buttons */}
